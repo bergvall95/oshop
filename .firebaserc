@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "organic-shop-b3437": {
+      "hosting": {
+        "oshop": [
+          "organic-shop-b3437"
+        ]
+      }
+    }
+  }
+}

@@ -121,8 +121,16 @@
               "devServerTarget": "oshop:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "oshop"
+    }
+  },
+  "defaultProject": "oshop",
+  "cli": {
+    "analytics": "08d490c7-ba67-4f8a-aac2-d2ca9ed7a41a"
+  }
 }
