@@ -26,17 +26,10 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { FormsModule } from '@angular/forms';
-import {MatTableModule} from '@angular/material/table';
-import {MatTableDataSource} from '@angular/material/table';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MatTableDataSource,
-    MatPaginator,
-    MatSort,
     BootstrapNavbarComponent,
     HomeComponent,
     ProductsComponent,
@@ -48,7 +41,6 @@ import {MatSort} from '@angular/material/sort';
     LoginComponent,
     AdminOrdersComponent,
     ProductFormComponent,
-    MatTableModule
   ],
   imports: [
     BrowserModule,
