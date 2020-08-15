@@ -1,7 +1,11 @@
 import { Product, ProductId } from './../../models/product';
 import { ProductService } from './../../product.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { Subscription, Subject } from 'rxjs';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
+
 
 @Component({
   selector: 'app-admin-products',
@@ -12,6 +16,11 @@ export class AdminProductsComponent implements OnInit, OnDestroy{
  products: ProductId[];
  filteredProducts: any[];
  subscription: Subscription;
+ dataSource: MatTableDataSource<Product>;
+ @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+ @ViewChild(MatSort, {static: true}) sort: MatSort;
+
+
   constructor(private productService: ProductService) {
    }
 
@@ -19,6 +28,8 @@ export class AdminProductsComponent implements OnInit, OnDestroy{
     this.subscription = this.productService.getAll().subscribe(products => {
       this.filteredProducts = this.products = products;
     });
+    this.dataSource = new MatTableDataSource(this.filteredProducts);
+    this.dataSource.paginator = this.paginator;
   }
 
   ngOnDestroy(): void{

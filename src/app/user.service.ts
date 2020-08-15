@@ -11,7 +11,7 @@ import { AppUser } from './models/app-user';
 export class UserService {
 
   constructor(private db: AngularFirestore)  {
-   }
+  }
 
    save(user: firebase.User){
      this.db.collection('users').doc(user.uid).update({

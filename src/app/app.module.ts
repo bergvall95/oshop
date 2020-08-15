@@ -5,7 +5,6 @@ import {AdminAuthGuard } from './admin-auth-guard.service';
 import { AuthGuard } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { BrowserModule } from '@angular/platform-browser';
-import '@angular/compiler';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,11 +26,17 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { FormsModule } from '@angular/forms';
-import { DataTableModule } from 'angular-4-data-table';
+import {MatTableModule} from '@angular/material/table';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MatTableDataSource,
+    MatPaginator,
+    MatSort,
     BootstrapNavbarComponent,
     HomeComponent,
     ProductsComponent,
@@ -42,11 +47,11 @@ import { DataTableModule } from 'angular-4-data-table';
     AdminProductsComponent,
     LoginComponent,
     AdminOrdersComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    MatTableModule
   ],
   imports: [
     BrowserModule,
-    DataTableModule,
     NgbModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // firestore
