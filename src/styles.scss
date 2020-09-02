@@ -10,3 +10,14 @@ body{
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import "~@angular/material/_theming";
+@include mat-core();
+
+$table-primary: mat-palette($mat-blue-gray, 500);
+$table-accent: mat-palette($mat-amber, 500);
+$table-warn: mat-palette($mat-red);
+$table-theme: mat-light-theme($table-primary,$table-accent, $table-warn);
+
+@include angular-material-theme($table-theme);
+@include mat-paginator-theme($table-theme);
