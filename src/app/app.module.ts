@@ -1,3 +1,4 @@
+import { MatTableModule } from '@angular/material/table';
 import { ProductService } from './product.service';
 import { UserService } from './user.service';
 import { CategoryService } from './category.service';
@@ -26,6 +27,9 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { FormsModule } from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -45,13 +49,17 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     NgbModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
     AngularFireStorageModule, // storage
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AuthService,

@@ -16,8 +16,14 @@ export class ProductService {
   getAll(){
     return this.db.collection<Product>('products').snapshotChanges().pipe(map(actions => actions.map(a =>{
       const data = a.payload.doc.data();
-      const id = a.payload.doc.id;
-      return {id, data} as ProductId;
+      const product: ProductId = {
+        id: a.payload.doc.id,
+        title: data.title,
+        price: data.price,
+        imageUrl: data.imageUrl,
+        category: data.category
+      }
+      return product;
 
     })));
   }

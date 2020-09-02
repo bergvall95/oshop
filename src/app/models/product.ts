@@ -7,5 +7,4 @@ export interface Product {
 
 export interface ProductId extends Product{
     id: string;
-    data: Product;
 }
