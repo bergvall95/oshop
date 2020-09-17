@@ -22,7 +22,7 @@ export class ProductService {
         price: data.price,
         imageUrl: data.imageUrl,
         category: data.category
-      }
+      };
       return product;
 
     })));

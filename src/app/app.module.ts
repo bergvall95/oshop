@@ -1,3 +1,4 @@
+import { ShoppingCartService } from './shopping-cart.service';
 import { MatTableModule } from '@angular/material/table';
 import { ProductService } from './product.service';
 import { UserService } from './user.service';
@@ -30,6 +31,9 @@ import { FormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSortModule } from '@angular/material/sort';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
+import { ProductCardComponent } from './products/product-card/product-card.component';
+import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,9 @@ import { MatSortModule } from '@angular/material/sort';
     LoginComponent,
     AdminOrdersComponent,
     ProductFormComponent,
+    ProductFilterComponent,
+    ProductCardComponent,
+    ProductQuantityComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +74,8 @@ import { MatSortModule } from '@angular/material/sort';
     AuthGuard,
     ProductService,
     CategoryService,
-    UserService
+    UserService,
+    ShoppingCartService
   ],
   bootstrap: [AppComponent]
 })

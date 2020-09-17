@@ -1,1 +1,25 @@
-<p>home works!</p>
+<!-- <span>
+
+    <div class="btn-group-vertical col-md-3" style="height: fit-content; float: left;">
+        <button class ="btn btn-primary" [style.background-color]="allSelected ? '#007BFF': '#ccc'" (click)='selectAll()'> All Categories</button>
+        <button *ngFor="let category of categories"  [style.background-color]="isActive ? '#007BFF': '#ccc'" (click)='selectCategory(category.name)' class='btn btn-primary'>{{category.name}}</button>
+    </div>
+    <div class="row">
+        <div class = "column" >
+            <div *ngFor = "let product of products" >
+                <div *ngIf="product.category == isActive || allSelected" class='card'  style="padding: 10px; margin: 5px" >
+                    <img src="{{product.imageUrl}}" alt="{{placeholderImage}}" style="width: 100%; padding: 5px">
+                    <div class="container">
+                        <h2>{{product.title}}</h2>
+                        <p> ${{product.price}} </p>
+                        <button style= "padding-bottom: 5px " class="btn">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>    
+            </div>
+            
+        </div>  
+    </div>
+
+</span> -->
