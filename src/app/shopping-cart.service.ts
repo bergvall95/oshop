@@ -66,15 +66,22 @@ export class ShoppingCartService {
 
     const data = item$.get().pipe(map(action => {
       this.prodExists = action.exists;
+      console.log(cartId);
+      console.log(this.prodExists);
       return action.data();
     }));
 
     data.subscribe(item => {
-      let quantity = (item.quantity || 0) + change;
+      let quantity = 0;
+
+      if(item){
+        quantity = item.quantity;
+      }
+
       if (quantity === 0 ) { item$.delete(); }
 
       if (this.prodExists){
-        item$.update({ product, quantity: item.quantity + change});
+        item$.update({ product, quantity: quantity + change});
       }
       else{
         item$.set({product, quantity: 1});

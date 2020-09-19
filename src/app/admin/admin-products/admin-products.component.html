@@ -41,21 +41,3 @@
     <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
 </div> 
  
-<!-- 
-  
-<table  class="table">
-    <thead class = 'thead-light'>
-        <tr>
-            <th scope="col" >Title</th>
-            <th scope="col" >Price</th>
-            <th scope="col" ></th>
-        </tr>
-    </thead>
-    <tbody class = 'table-hover'>
-        <tr *ngFor = "let p of filteredProducts" >
-            <td>{{p.title}}</td>
-            <td>{{p.price | currency:'USD' }} </td>
-            <td><a [routerLink]="['/admin/products/', p.id]">Edit</a></td>
-        </tr>
-    </tbody>
-</table> -->

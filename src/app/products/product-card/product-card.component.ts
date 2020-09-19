@@ -1,8 +1,8 @@
-import { ShoppingCartId, CartItem } from './../../models/shopping-carts';
+import { Observable } from 'rxjs';
+import { ShoppingCartId } from './../../models/shopping-carts';
 import { ShoppingCartService } from './../../shopping-cart.service';
 import { ProductId } from './../../models/product';
-import { Component, OnInit, Input } from '@angular/core';
-import { isNgTemplate } from '@angular/compiler';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'product-card',
