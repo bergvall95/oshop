@@ -34,6 +34,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 import { ProductCardComponent } from './products/product-card/product-card.component';
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
+import { CartTableComponent } from './cart-table/cart-table.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
     ProductFilterComponent,
     ProductCardComponent,
     ProductQuantityComponent,
+    CartTableComponent,
   ],
   imports: [
     BrowserModule,

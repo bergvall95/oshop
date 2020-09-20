@@ -1,43 +1,9 @@
 <h1>Shopping Cart</h1>
-<div class="row col-10" *ngIf="cart$ | async as cart">
-    <div>
-        <p>You have {{cart.totalItemsCount}} items in your shopping cart.</p> 
-        <button class="btn btn-warning btn-sm" (click)='clearCart()'> Clear Shopping Cart</button>
-        <p></p>
-    </div>
-<table class="table">
-    <thead>
-        <tr>
-            <th></th>
-            <th>Product</th>
-            <th class="text-center" style="width: 230px">Quantity</th>
-            <th class="text-right" style="width: 230px">Price</th>
-        </tr>
-    </thead>
-    <tbody>
-        <ng-container *ngFor="let item of cart.items">
-            <tr *ngIf="item.quantity != 0" >
-                <td><div [style.backgroundImage]="'url(' + item.product.imageUrl + ')'" class="thumbnail"></div></td>
-                <td>{{item.product.title}}</td>
-                <td>
-                    <product-quantity [product] = 'item.product' [shopping-cart]="cart"></product-quantity>
-                </td>
-                <td class="text-right">{{item.totalPrice | currency: USD}}</td>
-            </tr>
-        </ng-container>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th></th>
-            <th>Total</th>
-            <th class = 'text-center'>{{cart.totalItemsCount}}</th>
-            <th class="text-right">{{cart.totalPrice | currency: USD}}</th>
-        </tr>
-    </tfoot>
-    
-</table>
-    <div>
-        <button class="btn btn-primary" (click)="checkOut()" routerLink="/check-out"> Check Out </button>
-    </div>
-    
+
+<div class="row col-10" *ngIf="cart$ | async as cart" style="position: relative;">
+    <button class="btn btn-warning btn-sm" (click)='clearCart()' style="position:absolute; right: 10px; margin-bottom: 20px;"> Clear Shopping Cart</button>
+    <cart-table class="table" [shoppingCart]='cart$'></cart-table>
+</div>
+<div>
+    <button class="btn btn-primary" (click)="checkOut()" routerLink="/check-out"> Check Out </button>
 </div>

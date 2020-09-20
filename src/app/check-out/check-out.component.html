@@ -23,14 +23,16 @@
                 </label>
                 <input type="text" id="city" class="form-control">
             </div>
+            <button class="btn btn-primary">Place Order</button>
         </form>
     
     </div>
-    <div class="col-5 card">
+    <div class="col-5 card" *ngIf="cart$">
         <div class="card-body">
             <h2 class='card-title'>
                 Order Summary
             </h2>
+            <cart-table [showExtras] ="false" [shoppingCart]="cart$"></cart-table>
         </div>
     </div>
 </div>
